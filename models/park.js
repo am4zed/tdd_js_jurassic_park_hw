@@ -20,7 +20,7 @@ Park.prototype.find_dinosaur_most_visitors = function(){
 
 Park.prototype.find_species = function(species){
   let diplodocus_dinos = [];
-  for (let dinosaur in this.dinosaurs){
+  for (const dinosaur of this.dinosaurs){
   if (dinosaur.species === species)
     {diplodocus_dinos.push(dinosaur)};
   };
@@ -28,7 +28,7 @@ Park.prototype.find_species = function(species){
 };
 
 Park.prototype.remove_species = function(species){
-  for (let dinosaur in this.dinosaurs){
+  for (const dinosaur of this.dinosaurs){
     if (dinosaur.species === species)
       {index = this.dinosaurs.indexOf(dinosaur);
         this.dinosaurs.splice(index, 1);
@@ -37,11 +37,10 @@ Park.prototype.remove_species = function(species){
 };
 
 Park.prototype.total_visitors_per_day = function(){
-  let total = 0
-  for (let dinosaur in this.dinosaurs) {
-    let guests = dinosaur.guestsAttractedPerDay;
-    total += guests;
-  };
+  let total = 0;
+  for (const dinosaur of this.dinosaurs) {
+    total += dinosaur.guestsAttractedPerDay;
+  }
   return total;
 };
 
