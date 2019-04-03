@@ -28,12 +28,14 @@ Park.prototype.find_species = function(species){
 };
 
 Park.prototype.remove_species = function(species){
+  const newDinosaurs = [];
+
   for (const dinosaur of this.dinosaurs){
-    if (dinosaur.species === species)
-      {index = this.dinosaurs.indexOf(dinosaur);
-        this.dinosaurs.splice(index, 1);
+    if (dinosaur.species !== species){
+      newDinosaurs.push(dinosaur);
       };
   };
+  this.dinosaurs = newDinosaurs;
 };
 
 Park.prototype.total_visitors_per_day = function(){

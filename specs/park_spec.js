@@ -71,7 +71,7 @@ describe('Park', function() {
     park.add_dinosaur(dinosaur1);
     park.add_dinosaur(dinosaur2);
     park.add_dinosaur(dinosaur3);
-    const actual = park.total_visitors_per_day;
+    const actual = park.total_visitors_per_day();
     assert.strictEqual(actual, 1200);
   })
 
